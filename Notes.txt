@@ -1,0 +1,42 @@
+This solution is set for x64
+The token SOLUTION_NAME is the user-friendly name for the application; e.g., MoneyPro.
+
+Using this base solution:
+	Create the new folder SOLUTION_NAME location under Source
+	Create the respository in SourceTree.
+	Copy the solution contents from Base_WPF into the new folder.  Do not include/overwrite the .gitignore.txt or .git folder
+	Rename the solution to SOLUTION_NAME.
+	Clear out the notes.txt file.
+	Open and build the solution to confirm there are no issues.
+	Stage/commit/push the changes to the repository as Initial Commit
+
+Updating the icon:
+	Icon will need created using the steps found in OneNote under Technoglogy/Gimp Tips
+	The output should be places under .\Images
+	Window Icon: An ico file set in MainWindow.xaml <Window>; Icon="/Images/<icon_name>.ico"
+	Application Icon: An ico file selected in startup project properties; under Application, select the icon file
+	About Icon: A png file set in MainVM InitAboutProperties; ImagePath = "/WPF;component/Images/<icon_name>.png",
+
+Setup - File System
+	The "Primary Output" and "Runtime Implementation" has already been added to the "Application Folder".  For any additional projects:
+		Right-click and select "Add > Project Output...".
+		Select a project and then ctrl-click the "Primary Output" and "Runtime Implementation"; then click [OK].
+		Repeat above for each project.
+	In "Application Folder"
+		Add any other non-editable files; e.g., instructions, help files, etc.
+	In "User's Desktop":
+		Right-click and select "New shortcut...".
+		In the combo, select "Application Folder" and select the "Primary output" for the startup project.
+	In "User's Application Data Folder":
+		Update the name of the "WPF" folder under "Advanced Applications" to be the name of the solution from above.
+		Add any user/application editable files from the solution into this folder; e.g., MDF/LDF (database) files, supplied spreadsheets, etc.
+
+Setup - Properties
+	Highlight the "Setup" project and in the properties window, set "ProductName" to the SOLUTION_NAME.
+
+Setup - Prerequisites
+	By default, this project is set to download prerequites (e.g., .NET, SQL LocalDB, etc.) from the internet.
+	To change this and include them in the setup package:
+		Right-click "Setup" and select "Properties..."
+		Click "Prerequisites" and then click "Download prerequisites from the same location..."; then click [OK].
+		Click [Apply] then [OK] to close the properties window.
